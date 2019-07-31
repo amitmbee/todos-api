@@ -1,24 +1,53 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Instructions
 
-Things you may want to cover:
+- Clone the repo
+- Switch ruby version to `ruby-2.6.0`.
+```
+rvm install 2.6.0
+rvm use 2.6.0
+ruby -v
+```
+- Edit env variables are per requirements
+```
+POSTGRES_HOST=localhost
+POSTGRES_DB=todos
+```
+Note: `development`, `test` and `production` environments use the same db. In case you need different db's, feel free to edit `config/database.yml`
 
-* Ruby version
+- `rake db:setup`
+- `rails s`
 
-* System dependencies
+Server should be running on port `3000` by default.
 
-* Configuration
+### Performing CRUD
 
-* Database creation
+#### Create a todo
+`POST /todo_items`
+with req body
+```
+{
+  name: "Read a book",
+  completed: false
+}
+```
+Note: `completed` is optional(`false` by default)
 
-* Database initialization
+#### READ a single/all todos
+INDEX - `GET /todo_items` gives  a list of all todos.
+or
+SHOW - `GET /todo_items/:id` gives a has of single todo item
 
-* How to run the test suite
+#### UPDATE a todo
+`PUT /todo_items/:id`
+with req body
+```
+{
+  name: "Water plants",
+  completed: true
+}
+```
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+#### DELETE a todo
+`DELETE /todo_items/:id`

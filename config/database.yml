@@ -4,10 +4,10 @@ default: &default
   pool: 5
   timeout: 5000
   database: <%= ENV['POSTGRES_DB'] %>
-  host: localhost
+  host: db
   username: <%= ENV['POSTGRES_DB'] %>
   password:
-  port: 5432
+  host:
 
 development:
   <<: *default

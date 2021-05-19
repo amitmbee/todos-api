@@ -7,7 +7,7 @@ ruby '2.6.0'
 gem 'rails', '~> 5.2.2', '>= 5.2.2.1'
 # Use postgres as the database for Active Record
 gem 'pg'
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 4.3'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
